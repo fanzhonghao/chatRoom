@@ -78,6 +78,7 @@ class printIn extends Thread{
             try {
 
                 BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+
                 System.out.println(in.readLine());
 
                 Thread.sleep(50);
