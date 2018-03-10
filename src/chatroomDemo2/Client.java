@@ -13,7 +13,8 @@ import java.util.Scanner;
  * @Author:fan
  * @Date: 18-3-10
  * Description:
- * <p>
+ * <p>客户端，用于建立与服务
+ * 端的连接和发送与接收信息
  * -----------------------
  */
 public class Client extends Thread{
@@ -77,6 +78,9 @@ class input extends Thread{
 
     }
 }
+/*
+从服务端获取信息
+ */
 class output extends Thread{
     private Socket socket;
     private String news;

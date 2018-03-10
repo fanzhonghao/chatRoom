@@ -9,7 +9,8 @@ import java.net.ServerSocket;
  * @Author:fan
  * @Date: 18-3-10
  * Description:
- * <p>
+ * <p>服务端：
+ * 用于创建多个客户端连接线程
  * -----------------------
  */
 public class Server extends Thread{
