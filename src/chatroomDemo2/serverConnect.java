@@ -79,6 +79,8 @@ class printInput extends Thread{
                     message.time = new Date().getTime();
                 }
                 Thread.sleep(50);
+
+
             } catch (IOException e) {
                 e.printStackTrace();
             }catch (InterruptedException e){
