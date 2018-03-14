@@ -147,18 +147,20 @@ class takeOutData extends Thread{
             while (true){//当为time赋值的时候会出错
                 preparedStatement.setLong(1,time);
                 resultSet = preparedStatement.executeQuery();
-
+//                Thread.sleep(2000);
 //                System.out.println("time1: " + time);
 //                time = new Date().getTime();//此处为time赋值会导致客户端不能输出数据
 //                System.out.println("time2: " + time);
 
                 while (resultSet.next()){
                     out.println(resultSet.getString(2));
-                    time = new Date().getTime();//此处为time赋值会导致只输出一次数据
+//                    time = new Date().getTime();//此处为time赋值会导致只输出一次数据
                 }
 
 //                time = new Date().getTime();
+
                 Thread.sleep(2000);
+//                time = new Date().getTime();//导致没有数据输出
             }
 
         } catch (ClassNotFoundException e) {
