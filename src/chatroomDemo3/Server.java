@@ -137,7 +137,6 @@ class takeOutData extends Thread{
                 System.out.println("数据库连接失败");
                 System.exit(-1);
             }
-//            Statement statement = con.createStatement();
             PrintWriter out = new PrintWriter(socket.getOutputStream(),true);
 
             String sql = "SELECT * FROM info WHERE TIME > ? ";
@@ -149,23 +148,15 @@ class takeOutData extends Thread{
                 preparedStatement.setLong(1,time);
                 resultSet = preparedStatement.executeQuery();
 
-                System.out.println("time1: " + time);
-                time = new Date().getTime();
-                System.out.println("time2: " + time);
+//                System.out.println("time1: " + time);
+//                time = new Date().getTime();//此处为time赋值会导致客户端不能输出数据
+//                System.out.println("time2: " + time);
 
                 while (resultSet.next()){
-//                    out.println("get");
-                    list.add(resultSet.getString(1));
-                    list.add(resultSet.getString(2));
-//                    System.out.println("result: "+resultSet.getString(1));
+                    out.println(resultSet.getString(2));
+                    time = new Date().getTime();//此处为time赋值会导致只输出一次数据
                 }
 
-                for (int i = 0;i < list.size();i++){
-                    if (i%2 == 1){
-                        out.println(list.get(i));
-//                        time = new Date().getTime();
-                    }
-                }
 //                time = new Date().getTime();
                 Thread.sleep(2000);
             }

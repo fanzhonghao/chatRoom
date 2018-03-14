@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a1f89c35-4f46-434f-90b1-d5222cc66712" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/chatroomDemo3/Server.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/chatroomDemo3/messageTransfer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/chatRoom/chatroomDemo2/printInput.class" afterPath="$PROJECT_DIR$/out/production/chatRoom/chatroomDemo2/printInput.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/chatRoom/chatroomDemo2/printout.class" afterPath="$PROJECT_DIR$/out/production/chatRoom/chatroomDemo2/printout.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/chatRoom/chatroomDemo2/readme.md" afterPath="$PROJECT_DIR$/out/production/chatRoom/chatroomDemo2/readme.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/chatRoom/chatroomDemo3/readme.md" afterPath="$PROJECT_DIR$/out/production/chatRoom/chatroomDemo3/readme.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chatroomDemo2/serverConnect.java" afterPath="$PROJECT_DIR$/src/chatroomDemo2/serverConnect.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chatroomDemo3/readme.md" afterPath="$PROJECT_DIR$/src/chatroomDemo3/readme.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chatroomDemo3/Server.java" afterPath="$PROJECT_DIR$/src/chatroomDemo3/Server.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -47,12 +39,12 @@
       <file leaf-file-name="Server.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/chatroomDemo3/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="160" column="17" lean-forward="true" selection-start-line="155" selection-start-column="16" selection-end-line="160" selection-end-column="17" />
+            <state relative-caret-position="251">
+              <caret line="156" column="69" lean-forward="false" selection-start-line="156" selection-start-column="69" selection-end-line="156" selection-end-column="69" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1521039984797" expanded="true" signature="2094:2133" ph="insert into info... " />
-                <marker date="1521039984797" expanded="true" signature="3646:3679" ph="SELECT * FRO... info" />
+                <marker date="1521040765711" expanded="true" signature="2094:2133" ph="insert into info... " />
+                <marker date="1521040765711" expanded="true" signature="3587:3620" ph="SELECT * FRO... info" />
               </folding>
             </state>
           </provider>
@@ -470,12 +462,12 @@
       <workItem from="1520864674106" duration="5030000" />
       <workItem from="1520914478232" duration="1093000" />
       <workItem from="1520929240512" duration="6401000" />
-      <workItem from="1521036212766" duration="3933000" />
+      <workItem from="1521036212766" duration="4507000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41728000" />
+    <option name="totallyTimeSpent" value="42302000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-11" width="1362" height="780" extended-state="6" />
@@ -857,12 +849,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/chatroomDemo3/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="160" column="17" lean-forward="true" selection-start-line="155" selection-start-column="16" selection-end-line="160" selection-end-column="17" />
+        <state relative-caret-position="251">
+          <caret line="156" column="69" lean-forward="false" selection-start-line="156" selection-start-column="69" selection-end-line="156" selection-end-column="69" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1521039984797" expanded="true" signature="2094:2133" ph="insert into info... " />
-            <marker date="1521039984797" expanded="true" signature="3646:3679" ph="SELECT * FRO... info" />
+            <marker date="1521040765711" expanded="true" signature="2094:2133" ph="insert into info... " />
+            <marker date="1521040765711" expanded="true" signature="3587:3620" ph="SELECT * FRO... info" />
           </folding>
         </state>
       </provider>
