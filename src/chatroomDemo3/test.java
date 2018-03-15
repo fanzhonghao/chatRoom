@@ -1,8 +1,5 @@
 package chatroomDemo3;
 
-import chatroomDemo2.newMessage;
-import chatroomDemo2.serverConnect;
-
 import java.io.IOException;
 import java.net.ServerSocket;
 

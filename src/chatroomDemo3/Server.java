@@ -78,9 +78,6 @@ class storeInMysql extends Thread{
                 System.exit(-1);
             }
 
-            Date date = new Date();
-//            Statement statement = con.createStatement();
-
             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             String data;
             PreparedStatement preparedStatement;
@@ -92,14 +89,14 @@ class storeInMysql extends Thread{
                 data = in.readLine();
                 if (data != null){
 
-                    time = date.getTime();
+                    time = new Date().getTime();
                     System.out.println("time: " + time + " data: " + data);
                     preparedStatement = con.prepareStatement(sql);
                     preparedStatement.setLong(1,time);
                     preparedStatement.setString(2,data);
                     preparedStatement.executeUpdate();
                 }
-                Thread.sleep(50);
+                Thread.sleep(20);
             }
 
 
@@ -147,20 +144,15 @@ class takeOutData extends Thread{
             while (true){//当为time赋值的时候会出错
                 preparedStatement.setLong(1,time);
                 resultSet = preparedStatement.executeQuery();
-//                Thread.sleep(2000);
-//                System.out.println("time1: " + time);
-//                time = new Date().getTime();//此处为time赋值会导致客户端不能输出数据
-//                System.out.println("time2: " + time);
 
                 while (resultSet.next()){
+                    time = resultSet.getLong(1);
                     out.println(resultSet.getString(2));
-//                    time = new Date().getTime();//此处为time赋值会导致只输出一次数据
                 }
 
-//                time = new Date().getTime();
+                resultSet.close();
+                Thread.sleep(50);
 
-                Thread.sleep(2000);
-//                time = new Date().getTime();//导致没有数据输出
             }
 
         } catch (ClassNotFoundException e) {
