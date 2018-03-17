@@ -22,13 +22,8 @@ import java.util.List;
  */
 public class Server extends Thread {
     private ServerSocket serverSocket;
-    private int port;
     private boolean connected;
-    private int num;
     public Server(ServerSocket serverSocket){
-        port = 2017;
-        num = 1;
-
         connected = false;
         this.serverSocket = serverSocket;
     }
