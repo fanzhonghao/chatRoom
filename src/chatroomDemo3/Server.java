@@ -79,6 +79,8 @@ class storeInMysql extends Thread{
             String sql = "insert into info(time,data) values(?,?)";
 
             long time;
+            preparedStatement = con.prepareStatement("set CHARACTER_SET_DATABASE = utf8");
+            preparedStatement.executeUpdate();
 
             while (true){
                 data = in.readLine();
