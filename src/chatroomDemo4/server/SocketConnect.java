@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Queue;
+import java.util.concurrent.LinkedBlockingQueue;
 
 
 /**
@@ -35,16 +36,19 @@ public class SocketConnect {
         Socket socket;
         @Override
         public void run() {
+            new Thread(new getDataFromdb(OutputQueue)).start();//从数据库取出消息,不需要,只需一个
+            new Thread(new PutInsertDataIndb(InputQueue)).start();//只需一个
             while (true){
                 try {
+                    Queue queue = new LinkedBlockingQueue();
+
                     socket = serverSocket.accept();
                     PrintWriter out = new PrintWriter(socket.getOutputStream(),true);
                     out.println("欢迎连接到服务端");
                     System.out.println("已连接客户端个数： " + no++);
                     new Thread(new InputData(socket,InputQueue)).start();//启动该socket的数据输入线程
-                    new Thread(new OutputData(socket,OutputQueue)).start();
-                    new Thread(new getDataFromdb(OutputQueue)).start();//从数据库取出消息
-                    new Thread(new PutInsertDataIndb(InputQueue)).start();
+                    new Thread(new OutputData(socket,queue)).start();//向客户端输出数据
+                    new Thread(new CopyDataFromQueueToQueue(OutputQueue,queue)).start();
 
                 } catch (IOException e) {
                     e.printStackTrace();

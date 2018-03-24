@@ -1,39 +1,35 @@
-package chatroomDemo4.server;
+package chatroomDemo4.Client;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.Socket;
-import java.util.Queue;
 
 /**
  * ----------------------
  *
  * @Author:fan
- * @Date: 18-3-16
+ * @Date: 18-3-22
  * Description:
- * <p>从客户端向服务端输入数据
+ * <p>
  * -----------------------
  */
-public class InputData implements Runnable{
+public class ReadInData implements Runnable {
     private Socket socket;
-    private Queue queue;//消息队列
-    public InputData(Socket socket,Queue queue){
+    private KeepData keepData;
+    public ReadInData(Socket socket, KeepData keepData){
         this.socket = socket;
-        this.queue = queue;
+        this.keepData = keepData;
     }
     @Override
     public void run() {
         try {
             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             while (true){
-                String data = in.readLine();
-                if (data != null){
-                    queue.offer(data);//消息队列中存放数据模式为 data
-                    System.out.println("InputData queue: " + queue.peek());
-                }
+                keepData.add(in.readLine());
                 Thread.sleep(1000);
             }
+
         } catch (IOException e) {
             e.printStackTrace();
         } catch (InterruptedException e){

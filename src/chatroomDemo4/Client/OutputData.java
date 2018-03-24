@@ -14,28 +14,26 @@ import java.util.Scanner;
  * <p>向其它客户端输出数据
  * -----------------------
  */
-public class OutputData implements Runnable{
+public class OutputData{
     private Socket socket;
     private String name;//客户端名字
+    private String data;
     public OutputData(Socket socket,String name){
         this.socket = socket;
         this.name = name;
     }
+    public void printData(String data){
+        this.data = name + ": " + data;
+        outData();
+    }
 
-    @Override
-    public void run() {
+    public void outData() {
         try {
-            PrintWriter out = new PrintWriter(socket.getOutputStream(),true);
-            Scanner in = new Scanner(System.in);
-            String data;
-            while (true){
-                data = in.nextLine();
-                if (data != null){
-                    out.println(name + ": " + data);
-                }
-            }
-        } catch (IOException e) {
+            PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+            out.println(data);
+        } catch(IOException e){
             e.printStackTrace();
         }
     }
 }
+
