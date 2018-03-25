@@ -22,9 +22,16 @@ public class dbInsert {
         String sql = "insert into info values(?,?)";
         try {
             if (data == null) return;
-            PreparedStatement preparedStatement = con.prepareStatement(sql);
+            PreparedStatement preparedStatement;
+
+//            preparedStatement = con.prepareStatement("set CHARACTER_SET_DATABASE = utf8");
+//            preparedStatement.executeUpdate();
+
+            preparedStatement = con.prepareStatement(sql);
+
             preparedStatement.setLong(1,time);
             preparedStatement.setString(2,data);
+            System.out.println("data: " + data);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

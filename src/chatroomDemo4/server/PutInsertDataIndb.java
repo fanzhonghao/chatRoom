@@ -25,7 +25,6 @@ public class PutInsertDataIndb implements Runnable {
         dboperate.connect();
         while (true){
             while (!queue.isEmpty()){
-                System.out.println("insert: " + queue.peek());
                 dboperate.insert(new Date().getTime(),(String) queue.poll());
             }
         }

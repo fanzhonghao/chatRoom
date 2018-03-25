@@ -2,6 +2,7 @@ package chatroomDemo4.server;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 /**
@@ -20,7 +21,7 @@ public class dbConnect {
     private String password;
 
     public dbConnect(){
-        address = "jdbc:mysql://localhost:3306/chatRoomInfo";
+        address = "jdbc:mysql://localhost:3306/chatRoomInfo?characterEncoding=utf8";
         name =  "fan";
         password = "@asd5211314";
     }

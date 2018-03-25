@@ -30,7 +30,6 @@ public class InputData implements Runnable{
                 String data = in.readLine();
                 if (data != null){
                     queue.offer(data);//消息队列中存放数据模式为 data
-                    System.out.println("InputData queue: " + queue.peek());
                 }
                 Thread.sleep(1000);
             }
